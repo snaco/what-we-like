@@ -8,7 +8,7 @@ import {NzFlexDirective} from 'ng-zorro-antd/flex';
   selector: 'app-root',
   imports: [RouterOutlet, NzButtonComponent, NzCardComponent, NzFlexDirective],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.less'
 })
 export class App {
   protected readonly title = signal('what-we-like');
