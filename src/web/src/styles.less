@@ -1,2 +1,283 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'styles/site';
+
+@wwl-font: 'ByteBounce';
+
+@font-family: @wwl-font, sans-serif;
+
+@import 'ng-zorro-antd/ng-zorro-antd.less';
+@import "themes/illustration-theme";
+//@import '../node_modules/ng-zorro-antd/ng-zorro-antd.less';
+
+
+// ========== Design Tokens ==========
+
+@primary-color: #52c41a;
+@success-color: #51cf66;
+@warning-color: #ffd93d;
+@error-color: #fa5252;
+@info-color: #4dabf7;
+@text-color: #2c2c2c;
+@border-color-base: #2c2c2c;
+@border-color-split: #2c2c2c;
+
+@border-width-base: 3px;
+@border-radius-base: 12px;
+@border-radius-lg: 16px;
+@border-radius-sm: 8px;
+
+@height-base: 40px;
+@height-sm: 34px;
+@height-lg: 48px;
+
+@font-size-base: 3vh;
+@font-weight-strong: 600;
+
+@body-background: rgb(255 249 240);
+@component-background: #ffffff;
+
+// ========== Component Token Overrides ==========
+
+// Button
+@btn-font-weight: 600;
+@btn-shadow: none;
+@btn-primary-shadow: none;
+@btn-danger-shadow: none;
+
+// Card
+@card-shadow: 4px 4px 0 @border-color-base;
+@card-background: #fff0f6;
+
+// Tooltip
+@tooltip-bg: rgba(100, 100, 100, 0.95);
+@tooltip-border-radius: 8px;
+
+// Select
+@select-item-selected-bg: transparent;
+
+// Slider
+@slider-handle-color: #237804;
+@slider-handle-color-hover: #237804;
+@slider-dot-border-color: #237804;
+@slider-dot-border-color-active: #237804;
+
+// ========== Illustration Style Helpers ==========
+
+@illustration-border: @border-width-base solid @border-color-base;
+@illustration-box-shadow: 4px 4px 0 @border-color-base;
+@illustration-box-shadow-inactive: 2px 2px 0 fade(@border-color-base, 30%);
+
+
+//========== Custom Component CSS Overrides ==========
+
+// Button — illustration box + uppercase label
+.ant-btn {
+  border: @illustration-border;
+  box-shadow: @illustration-box-shadow;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// Modal — illustration box (replaces default shadow)
+.ant-modal-content {
+  border: @illustration-border;
+  box-shadow: @illustration-box-shadow;
+}
+
+// Alert — illustration border
+.ant-alert {
+  border: @illustration-border;
+}
+
+// Color Picker — illustration box
+// Note: arrow: false must be set per-component via [nzArrow]="false"
+.ant-color-picker {
+  border: @illustration-border;
+  box-shadow: @illustration-box-shadow;
+}
+
+// Popover — illustration box
+.ant-popover-inner {
+  border: @illustration-border;
+  box-shadow: @illustration-box-shadow;
+}
+
+// Tooltip — padding on root, illustration box on inner
+// Note: arrow: false must be set per-component via [nzTooltipArrowPointAtCenter]="false"
+//       or hidden globally with the rule below
+.ant-tooltip {
+  .ant-tooltip-inner {
+    padding: @padding-md;
+    border: @illustration-border;
+    box-shadow: @illustration-box-shadow;
+  }
+
+  .ant-tooltip-arrow {
+    display: none;
+  }
+}
+
+// Dropdown — illustration popup box
+.ant-dropdown-menu {
+  border: @illustration-border;
+  box-shadow: @illustration-box-shadow;
+  border-radius: @border-radius-lg;
+  background-color: @component-background;
+}
+
+// Select trigger — illustration box
+.ant-select:not(.ant-select-disabled) .ant-select-selector {
+  border: @illustration-border;
+  box-shadow: @illustration-box-shadow;
+}
+
+// Select dropdown — illustration popup box
+.ant-select-dropdown {
+  border: @illustration-border;
+  box-shadow: @illustration-box-shadow;
+  border-radius: @border-radius-lg;
+  background-color: @component-background;
+}
+
+// Input — illustration box
+.ant-input,
+.ant-input-affix-wrapper {
+  border: @illustration-border;
+  box-shadow: @illustration-box-shadow;
+}
+
+// Input Number — illustration box, narrower handler strip
+.ant-input-number {
+  border: @illustration-border;
+  box-shadow: @illustration-box-shadow;
+}
+
+.ant-input-number-handler-wrap {
+  width: 12px;
+}
+
+// Progress — styled rail (track background) and bar
+.ant-progress-inner {
+  height: 16px;
+  border: @border-width-base solid @border-color-base;
+  box-shadow: 2px 2px 0 @border-color-base;
+}
+
+.ant-progress-bg {
+  height: 10px !important;
+  border: none;
+}
+
+
+.ant-card-bordered {
+  //box-shadow: @illustration-box-shadow;
+}
+
+.ant-segmented {
+  border-radius: @border-radius-base;
+  //background-color: #00000000 !important;
+  border: @illustration-border;
+  //border-color: red;
+  box-shadow: @illustration-box-shadow;
+  //padding: 0;
+}
+
+.ant-segmented-item {
+  border-radius: @border-radius-sm;
+}
+
+.ant-segmented-group {
+  //border-radius: @border-radius-base;
+
+}
+
+.ant-segmented-item-selected {
+  //outline: @illustration-border;
+  //border-radius: @border-radius-lg;
+  //border: @illustration-border;
+  //border-top: none;
+  //border-bottom: none;
+  //box-sizing: border-box;
+}
+
+.ant-segmented-thumb {
+  border-radius: @border-radius-sm;
+  //outline: @illustration-border;
+  //border: @illustration-border;
+}
+
+
+body {
+  font-family: @wwl-font, sans-serif;
+  overflow: hidden;
+  background-image: url("https://mdn.alipayobjects.com/huamei_iwk9zp/afts/img/A*HuVGQKqOER0AAAAARsAAAAgAegCCAQ/original");
+  background-size: contain;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, fade(@body-background, 0), @body-background);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, fade(@body-background, 0), @body-background);
+  }
+
+  app-root {
+    z-index: 2
+  }
+}
+
+
+[fill] {
+  height: 100%;
+  width: 100%;
+}
+
+#app-content > div.ant-card-body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.ant-steps-item-wait {
+  .ant-steps-item-icon {
+    .ant-steps-icon {
+      top: -2.5px;
+    }
+  }
+}
+
+.ant-steps-item-active {
+  .ant-steps-item-icon {
+    box-shadow: @illustration-box-shadow;
+
+    .ant-steps-icon {
+      top: -2.5px;
+    }
+  }
+}
+
+.ant-steps-item-icon {
+  box-shadow: @illustration-box-shadow-inactive;
+  transition: box-shadow 0.2s ease-in-out;
+
+  .ant-steps-icon {
+    top: -2.5px;
+  }
+}
 

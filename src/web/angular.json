@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "wwl",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -30,18 +30,18 @@
               },
               {
                 "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
               }
             ],
-            "styles": ["src/theme.less", "src/styles.less"],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
+            "styles": ["src/styles/fonts.less", "src/styles.less"],
             "security": {
               "allowedHosts": []
-            },
-            "ssr": {
-              "entry": "src/server.ts"
             }
           },
           "configurations": {
